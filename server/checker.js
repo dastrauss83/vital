@@ -34,7 +34,7 @@ app.post("/check", async (req, res) => {
       await sendErrorEmail(email);
       clearInterval(checkInterval);
     }
-  }, 6000);
+  }, 60000);
 
   res.json({ message: "Checker started" });
 });
