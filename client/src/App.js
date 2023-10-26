@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
 function App() {
-  const [email, setEmail] = useState("dastrauss83@gmail.com");
-  const [classTime, setClassTime] = useState("12:00 PM");
-  const [classTitle, setClassTitle] = useState("cycle");
+  const [email, setEmail] = useState("");
+  const [classTime, setClassTime] = useState("");
+  const [classTitle, setClassTitle] = useState("");
   const [responseMessage, setResponseMessage] = useState("");
 
   const backendURL = process.env.REACT_APP_BACKEND_URL;
