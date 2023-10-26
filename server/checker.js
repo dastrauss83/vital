@@ -13,6 +13,10 @@ const PORT = 5000;
 app.use(cors());
 app.use(express.json());
 
+app.get("/", (_, res) => {
+  res.json({ message: "Backend service is running!" });
+});
+
 app.post("/check", async (req, res) => {
   const { email, classTime, classTitle } = req.body;
 
@@ -37,10 +41,6 @@ app.post("/check", async (req, res) => {
   }, 60000);
 
   res.json({ message: "Checker started" });
-});
-
-app.get("/", (_, res) => {
-  res.json({ message: "Backend service is running!" });
 });
 
 app.listen(PORT, () =>
