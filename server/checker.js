@@ -39,6 +39,10 @@ app.post("/check", async (req, res) => {
   res.json({ message: "Checker started" });
 });
 
+app.get("/", (_, res) => {
+  res.json({ message: "Backend service is running!" });
+});
+
 app.listen(PORT, () =>
   console.log(`Server running on http://localhost:${PORT}`)
 );
