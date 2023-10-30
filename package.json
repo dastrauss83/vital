@@ -14,7 +14,7 @@
     "puppeteer": "^21.4.1"
   },
   "scripts": {
-    "start:dev": "concurrently \"cd client && yarn start\" \"node server/checker.js\"",
+    "start:dev": "concurrently \"cd client && yarn start\" \"node api/checker.js\"",
     "start": "node api/checker.js",
     "build:client": "cd client && yarn build",
     "build:server": "echo 'No server build step required'",

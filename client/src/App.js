@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 function App() {
   const [email, setEmail] = useState("");
@@ -10,20 +11,13 @@ function App() {
 
   const handleSubmit = async () => {
     try {
-      const response = await fetch(`${backendURL}/api/start-cron`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email,
-          classTime,
-          classTitle,
-        }),
+      const response = await axios.post(`${backendURL}/start-cron`, {
+        email,
+        classTime,
+        classTitle,
       });
 
-      const data = await response.json();
-      setResponseMessage(data.message);
+      setResponseMessage(response.data.message);
     } catch (error) {
       setResponseMessage("Error occurred while sending the request.");
       console.error("Failed to send request:", error);

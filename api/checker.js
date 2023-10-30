@@ -27,7 +27,7 @@ app.post("/start-cron", async (req, res) => {
   try {
     const detailedJob = {
       title: "Check Availability",
-      address: "https://vital-backend.vercel.app/api/check",
+      address: "http://localhost:5000/check",
       httpMethod: "POST",
       body: JSON.stringify({ email, classTime, classTitle }),
       schedule: {
