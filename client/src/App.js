@@ -10,7 +10,7 @@ function App() {
 
   const handleSubmit = async () => {
     try {
-      const response = await fetch(`${backendURL}/check`, {
+      const response = await fetch(`${backendURL}/start-cron`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
