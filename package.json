@@ -15,7 +15,7 @@
   },
   "scripts": {
     "start:dev": "concurrently \"cd client && yarn start\" \"node server/checker.js\"",
-    "start": "node server/checker.js",
+    "start": "node api/checker.js",
     "build:client": "cd client && yarn build",
     "build:server": "echo 'No server build step required'",
     "build": "yarn build:client && yarn build:server"
